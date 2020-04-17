@@ -1,0 +1,39 @@
+#:import utils kivy.utils
+#:import svg kivy.graphics.svg
+
+<HomeScreen>:
+	FloatLayout:
+		canvas:
+			Color: 
+				rgb: utils.get_color_from_hex("#2d2136")
+			Rectangle:
+				size: self.size
+				pos: self.pos
+		GridLayout:
+			rows: 1
+			pos_hint: {"top": 1, "left": 1}
+			size_hint: 1, .4
+			Image:
+				source: "icons/title.png"
+				size_hint_y: 1
+		GridLayout:
+			cols:1
+			pos_hint: {"top": .875, "left": 1}
+			size_hint: 1, .15
+			Image:
+				source: "icons/dogbreed.png"
+				size_hint_y: 0.3
+			Image:
+				source: "icons/identifier.png"
+				size_hint_y: 0.3
+		GridLayout:
+			#menu
+			rows: 1
+			pos_hint: {"top": .2, "left": 1}
+			size_hint: 1, .1
+			ImageButton:
+				source: "icons/next.png"
+				on_press:
+					self.opacity = .5
+				on_release:
+					self.opacity = 1
